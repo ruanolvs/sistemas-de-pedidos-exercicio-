@@ -1,48 +1,48 @@
 package org.example.domain;
 
 public class Product {
-    private String nome;
-    private Double preco;
+    private String name;
+    private Double price;
 
-    public Product(String nome, Double preco) {
-        this.nome = validarNome(nome);
-        this.preco = validarPreco(preco);
+    public Product(String name, Double price) {
+        this.name = validName(name);
+        this.price = validPrice(price);
     }
-    public String validarNome(String nome){
-        if (nome.toLowerCase().isBlank()){
+    public String validName(String nome){
+        if (nome == null || nome.isBlank()){
             throw new IllegalArgumentException("nome invalido, nao pode ser nulo nem vazio");
         }
         return nome;
     }
-    public Double validarPreco(Double preco){
-        if (preco < 0){
+    public Double validPrice(Double price){
+        if (price < 0){
             throw new IllegalArgumentException("valor nao pode ser negatvo");
         }
-        return preco;
+        return price;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
     public Product setNome(String nome) {
-        this.nome = nome;
+        this.name = name;
         return this;
     }
 
-    public Double getPreco() {
-        return preco;
+    public Double getPrice() {
+        return price;
     }
 
-    public Product setPreco(Double preco) {
-        this.preco = preco;
+    public Product setPrice(Double price) {
+        this.price = price;
         return this;
     }
 
     @Override
     public String toString() {
         return "Product" +
-                "nome='" + nome + '\'' +
-                ", preco= €" + preco;
+                "nome='" + name + '\'' +
+                ", preco= €" + price;
     }
 }

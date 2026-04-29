@@ -30,7 +30,7 @@ public class Program {
 
         System.out.println(order2);
 
-        order1.removerProduct(p1);
+        order1.removeProduct(p1);
 
         System.out.println(order1);
 

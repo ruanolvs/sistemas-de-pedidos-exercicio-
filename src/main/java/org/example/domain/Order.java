@@ -21,15 +21,15 @@ public class Order {
     public void addProduct (Product prod){
         products.add(prod);
     }
-    public void removerProduct(Product prod){
+    public void removeProduct(Product prod){
         if (!products.remove(prod)){
-            throw new ProdutoNotFoundException("produto com id:" + prod.getNome() + " nao encontrado");
+            throw new ProdutoNotFoundException("produto com id:" + prod.getName() + " nao encontrado");
         }
             System.out.println("produto: " + prod + " removido com sucesso");
 
     }
-    public Double getPrecoTotal(){
-       return products.stream().mapToDouble(Product :: getPreco).sum();
+    public Double getPriceTotal(){
+       return products.stream().mapToDouble(Product :: getPrice).sum();
 
 
     }
@@ -38,6 +38,6 @@ public class Order {
     public String toString() {
         return "Id='" + orderId + '\'' +
                 ", status='" + status + '\''+
-                " total: " + getPrecoTotal();
+                " total: " + getPriceTotal();
     }
 }
